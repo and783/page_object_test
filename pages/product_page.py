@@ -9,6 +9,8 @@ class ProductPage(BasePage):
         self.get_number()
         self.check_book()
         self.check_price()
+        should_not_be_success_message()
+        should_be_disappeared()
     
     def click_add_to_basket(self):
         click_basket = self.browser.find_element(*ProductPageLocators.BASKET)
@@ -29,6 +31,12 @@ class ProductPage(BasePage):
         price_in_basket = self.browser.find_element(By.CSS_SELECTOR, ".alertinner p strong").text
         assert price == price_in_basket, " Ошибка, цены не совпадают"
         time.sleep(3)
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def should_be_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
         
         
         

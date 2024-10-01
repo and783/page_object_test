@@ -15,6 +15,7 @@ class ProductPage(BasePage):
         click_basket.click()
         
     def get_number(self):
+        time.sleep(2)
         self.solve_quiz_and_get_code()
         time.sleep(2)
         

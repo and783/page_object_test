@@ -7,6 +7,7 @@ from .pages.basket_page import BasketPage
 from .pages.base_page import BasePage
 import time
 
+
 @pytest.mark.parametrize('link', ["offer0", "offer1", "offer2", "offer3","offer4", "offer5",
                                   "offer6", pytest.param("offer7", marks=pytest.mark.xfail),
                                   "offer8", "offer9"])

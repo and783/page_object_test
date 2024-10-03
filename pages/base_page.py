@@ -8,6 +8,7 @@ from .locators import BasketPageLocators
 import time
 import math
 
+
 class BasePage():
     def go_to_login_page(self):
         login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)

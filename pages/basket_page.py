@@ -7,6 +7,7 @@ from .locators import BasketPageLocators
 from selenium.webdriver.common.by import By
 
 
+
 class BasketPage(BasePage):
     def basket_is_clear(self):
         assert self.is_element_present(*BasketPageLocators.TEXT_CLEAR_BASKET), "Books added in basket"
